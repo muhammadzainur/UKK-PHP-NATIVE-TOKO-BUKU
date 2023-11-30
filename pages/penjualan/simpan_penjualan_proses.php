@@ -1,11 +1,9 @@
 <?php
 include "../../conf/conn.php";
-$buku    = $_POST['buku'];
 $kasir   = $_POST['kasir'];
-$jumlah  = $_POST['jumlah'];
 $total   = $_POST['total'];
 $tanggal = $_POST['tanggal'];
-$query = "INSERT INTO penjualan (id_buku, id_kasir, jumlah, total, tanggal) VALUES ('$buku', '$kasir', '$jumlah', '$total', '$tanggal')";
+$query = "INSERT INTO penjualan (id_kasir, total, tanggal) VALUES ('$kasir', '$total', '$tanggal')";
 
 
 if ($koneksi->query($query)) {
