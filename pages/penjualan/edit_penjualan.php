@@ -37,18 +37,6 @@ $row = mysqli_fetch_array($result);
             <div class="box-body">
               <input type="hidden" name="id" value="<?php echo $id; ?>">
               <div class="form-group">
-                <label for="buku">Buku</label>
-                <select class="form-control" id="buku" name="buku">
-                  <?php
-                  $queryBuku = mysqli_query($koneksi, "SELECT id_buku, judul FROM buku");
-                  while ($bukuRow = mysqli_fetch_assoc($queryBuku)) {
-                    $selected = ($bukuRow['id_buku'] == $row['id_buku']) ? "selected" : "";
-                    echo "<option value='" . $bukuRow['id_buku'] . "' $selected>" . $bukuRow['judul'] . "</option>";
-                  }
-                  ?>
-                </select>
-              </div>
-              <div class="form-group">
                 <label for="kasir">Kasir</label>
                 <select class="form-control" id="kasir" name="kasir">
                   <?php
@@ -59,10 +47,6 @@ $row = mysqli_fetch_array($result);
                   }
                   ?>
                 </select>
-              </div>
-              <div class="form-group">
-                <label>Jumlah</label>
-                <input type="text" name="jumlah" class="form-control" placeholder="Jumlah" value="<?php echo $row['jumlah']; ?>" required>
               </div>
               <div class="form-group">
                 <label>Total</label>
